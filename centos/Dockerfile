@@ -24,5 +24,7 @@ RUN yum -y update \
 
 #端口查看
 	net-tools \
+	libtool \
+	autoconf \
 
 &&  rm -rf /tmp/* \
