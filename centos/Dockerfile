@@ -21,10 +21,39 @@ RUN yum -y update \
 	git \
 #gcc
 	gcc \
-
 #端口查看
 	net-tools \
+#autoconf依赖
 	libtool \
+#编译php源码需要
 	autoconf \
-
+    automake \
+    make \
+#安装依赖
+    libxml2 \
+    libxml2-devel \
+    libcurl.x86_64 \
+    libcurl-devel.x86_64 \
+    libjpeg.x86_64 \
+    libpng.x86_64 \
+    freetype.x86_64  \
+    libpng-devel.x86_64 \
+    freetype-devel.x86_64 \
+    openssl.x86_64 \
+    openssl-devel.x86_64 \
+    bzip2-devel.x86_64 \
+    libjpeg-devel \
+    libpng \
+    libXpm-devel \
+    libxslt \
+    libxslt-devel \
+#安装libmcrypt
+&& wget ftp://mcrypt.hellug.gr/pub/crypto/mcrypt/libmcrypt/libmcrypt-2.5.7.tar.gz \
+&& tar -zxf libmcrypt-2.5.7.tar.gz \
+&& cd libmcrypt-2.5.7 \
+&& ./configure \
+&& make \
+&& make install \
+&& cd .. \
+&& rm -rf libmcrypt-2.5.7.tar.gz \
 &&  rm -rf /tmp/* \
